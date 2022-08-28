@@ -41,6 +41,7 @@ body {
 }
 
 .resize-btn:hover,
+.resize-btn:focus,
 .resize-btn:active {
     background-color: rgb(74 225 74 / 50%);
 }
@@ -81,7 +82,8 @@ body {
     color:black;
 }
   
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown:focus .dropdown-content {
     visibility: visible;
     transition: all .1s ease
 }
@@ -124,6 +126,7 @@ kbd:active {
     padding: .25em .5em;
     white-space: nowrap;
     z-index: 100;
+    outline: none;
 }
 
 .input-kbd-min {
@@ -144,7 +147,7 @@ kbd:active {
     transition: all .25s cubic-bezier(.2,1,.2,1)
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
     transform:translate3d(0,1px, 5px);
     box-shadow: 3px 3px black; 
 }

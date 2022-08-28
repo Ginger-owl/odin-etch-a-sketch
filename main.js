@@ -44,44 +44,53 @@ const fillArea = (num) => {
         }
     }
 }
-// Event listeners to the input and buttons
-resizeBtn.addEventListener('click', () => {
+
+// Resize function
+const resizeArea = () => {
     areaSize = areaSizeInput.value;
     if (areaSize > 100) {
         areaSize = 100;
         areaSizeInput.value = 100
     }
     fillArea(areaSize)
-});
+    areaSizeInput.focus()
+}
 
-cleanBtn.addEventListener('click', () => {
+const cleanArea = () => {
     const divs = mainArea.querySelectorAll('.block')
     const divsArr = Array.from(divs)
     divsArr.forEach((item) => {item.style['background-color'] = 'white'}) 
-});
+}
 
-randomBtn.addEventListener('click', () => {
+const toggleRandom = () => {
     if (isRandomColor) {isRandomColor = false;}
     else {isRandomColor = true;}
     randomBtn.style['border-color'] = 'black';
-})
+}
 
-pickColorBtn.addEventListener('click', () => {
+const pickColor = () => {
     if (isColorChosen) {
         isColorChosen = false;
         pickColorBtn.textContent = 'Pick Color'
     } else {
         isColorChosen = true;
+        isRandomColor = false;
+        randomBtn.style['border-color'] = 'black'
         chosenColor = pickedColor.value;
         pickedColor.style['background-color'] = chosenColor;
         pickColorBtn.textContent = 'Back to black'
     }
+}
 
+// Event listeners to the input and buttons
+resizeBtn.addEventListener('click', resizeArea);
+cleanBtn.addEventListener('click', cleanArea);
+randomBtn.addEventListener('click', toggleRandom)
 
-})
+pickColorBtn.addEventListener('click', pickColor)
 
 // Painting function
-mainArea.addEventListener('mouseout', function(e) {
+mainArea.addEventListener('mouseout', (e) => {
     if (e.target.classList.contains('block')) {
         if (e.shiftKey) {
             e.target.style['background-color'] = 'white'
@@ -103,6 +112,13 @@ mainArea.addEventListener('mouseout', function(e) {
     }
 })
 
+document.addEventListener('keypress', (e) => {
+    console.log(e.key)
+    if (e.key == 'Enter')  {
+        setTimeout(() => {resizeBtn.focus()}, 50)
+        setTimeout(() => {resizeArea()}, 550)
+    }
+})
 
 window.onload = (e) => {
     console.log("page loaded!")
