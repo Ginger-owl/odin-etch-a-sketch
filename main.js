@@ -86,7 +86,6 @@ const pickColor = () => {
 resizeBtn.addEventListener('click', resizeArea);
 cleanBtn.addEventListener('click', cleanArea);
 randomBtn.addEventListener('click', toggleRandom)
-
 pickColorBtn.addEventListener('click', pickColor)
 
 // Painting function
@@ -113,7 +112,6 @@ mainArea.addEventListener('mouseout', (e) => {
 })
 
 document.addEventListener('keypress', (e) => {
-    console.log(e.key)
     if (e.key == 'Enter')  {
         setTimeout(() => {resizeBtn.focus()}, 50)
         setTimeout(() => {resizeArea()}, 550)
@@ -121,7 +119,6 @@ document.addEventListener('keypress', (e) => {
 })
 
 window.onload = (e) => {
-    console.log("page loaded!")
     fillArea(defaultAreaPaint);
     infoMenu.style.visibility = 'visible'; 
     setTimeout(() => {infoMenu.style.removeProperty('visibility'); }, 3000)};
