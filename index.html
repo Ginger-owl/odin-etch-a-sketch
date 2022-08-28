@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baumans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.6.1/randomColor.min.js" integrity="sha512-vPeZ7JCboHcfpqSx5ZD+/jpEhS4JpXxfz9orSvAPPj0EKUVShU2tgy7XkU+oujBJKnWmu4hU7r9MMQNWPfXsYw==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src="main.js" defer></script>
+    <title>Odin Etch-a-Sketch</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header-menu">
+            <div class="input-pair">
+                <input class="kbd-min input-kbd-min" id="paint-area" name="paint-area" class="kbd-min" type="number" max="100" min="1" step="1" value="64">
+                <button class="btn kbd-min resize-btn" id="resize-btn">Resize me</button>
+            </div>
+
+            <div class="input-pair">
+                <input class="input-color kbd-min" type="color" id="pickedColor" value="#655EC9">
+                <button class="btn kbd-min pickColor-btn" id="pickColor-btn">Pick Color</button>
+            </div>
+            <button class="btn kbd-min clean-btn" id="clean-btn">Clean filled</button>
+            <button class="btn kbd-min random-btn" id="random-btn">Go random</button>
+            <div class="dropdown">
+                <button class="dropbtn kbd-min">INFO 
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="dropdown-content">
+                    <button class="kbd-min" disabled>Hold <kbd>Shift</kbd> to erase</button>
+                    <button class="kbd-min" disabled>Hold <kbd>Ctrl</kbd> to paint <span class="word-span-pink">pink</span></button>
+                    <button class="kbd-min" disabled>Hold <kbd>Alt</kbd> to disable painting</button>
+                </div>
+            </div> 
+        </div>
+    </header>
+    <main class="main-area" id="main-area"></main>
+</body>
+</html>
