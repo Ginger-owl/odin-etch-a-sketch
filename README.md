@@ -1,6 +1,6 @@
 # Etch-a-Sketch project
 
-### Single page game when you can create a painting are and fill rectangulars on the screen with color.
+### Single page browser game when you can create a painting area and fill it with colored rectangulars color, using your mouse.
 
 [Click](https://ginger-owl.github.io/odin-etch-a-sketch/) to view.
 
@@ -9,6 +9,6 @@ Used technologies:
 * CSS
 * JS
 
-#### Color randomizer added with ['randomColor.js'](https://github.com/davidmerfield/randomColor) library
+#### Color randomizer added using ['randomColor.js'](https://github.com/davidmerfield/randomColor) library
 
 Project from The Odin Project [Foundations course](https://www.theodinproject.com/paths/foundations/courses/foundations)
